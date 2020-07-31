@@ -1,0 +1,21 @@
+{
+  "name": "restaurante_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./bin/server.js",
+  "scripts": {
+    "start":  "./bin/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anisio Gomes",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.2.1",
+    "mongoose": "^5.9.26",
+    "sequelize": "^6.3.3"
+  }
+}
