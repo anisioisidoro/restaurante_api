@@ -19,3 +19,10 @@ exports.login = async(data)=>{
 
     return response
 }
+
+exports.getUser = async(data)=>{
+    //var userModel = UserModel(data)
+    var response = await UserModel.findById(data)
+
+    return response
+}

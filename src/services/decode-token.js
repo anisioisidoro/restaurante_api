@@ -3,10 +3,13 @@ exports.decodeToeknData = async (req)=>{
     //Recuperar Token
 
    
-    const token = req.headers.authorization;
+    const header = req.headers.authorization;
+
+    const parts = header.split(' ')
+    const [ scheme, token ] = parts;
 
       //Decodificar Token
-    const data = await dec.decodeToken(token)
+    const data =  dec.decodeToken(token)
      
     return data;
 }

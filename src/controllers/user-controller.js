@@ -2,6 +2,7 @@ const ResponseModel = require('../models/response-model')
 const UserRepository = require('../repository/user-repository')
 const md5 = require('md5')
 const TokenService = require('../services/token-service')
+const TokenDecode = require('../services/decode-token')
 
 exports.createUser = async(req, res, next) =>{
 
@@ -80,4 +81,23 @@ exports.login = async(req, res, next)=>{
             }
         )
     }
+}
+
+exports.getUser = async(req, res, next)=>{
+    
+    var token = await  TokenDecode.decodeToeknData(req)
+    
+    var response = await UserRepository.getUser( 
+          token.id
+    )
+        res.send(
+            {           
+                  exito: true,
+                    mensagem: "operação efetuada com sucesso",
+                    objecto: {
+                       nome: response.nome,
+                        id: response._id
+                    }
+            }
+        )
 }

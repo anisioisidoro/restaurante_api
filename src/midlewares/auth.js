@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 
+
 module.exports = (req, res, next) => {
 
     const authHeader = req.headers.authorization;
@@ -37,7 +38,8 @@ module.exports = (req, res, next) => {
             sms: "Token inválido",
             objecto: null
         });
-
+        
+         
         // authConfig.id = decoded.id;
         // authConfig.agencia = decoded.agencia
         // authConfig.seguradora = decoded.seguradora

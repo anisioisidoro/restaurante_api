@@ -9,7 +9,7 @@ module.exports = {
     },
 
     decodeToken (data) {
-        var token =  jwt.verify(data, global.SECRET_KEY);
+        var token =    jwt.verify(data, global.SECRET_KEY);
        
         return token;
     }
