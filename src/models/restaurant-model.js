@@ -26,6 +26,16 @@ const schema = new Schema({
     telemovel:{
         type: Number,
         trim: true
+    },
+
+    latitude:{
+        type: String,
+        trim: true
+    },
+
+    longitude:{
+        type: String,
+        trim: true
     }
 })
 
