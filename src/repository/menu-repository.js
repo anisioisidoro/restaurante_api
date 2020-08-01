@@ -10,7 +10,8 @@ exports.CreateMenu = async(data) =>{
 }
 
 exports.getByRestaurant = async(data) =>{
-    var response = await MenuModel.find({restaurante: data})
+    var response = await MenuModel.find({})
+   // var response = await MenuModel.find({restaurante: data})
 
     return response;
 }
