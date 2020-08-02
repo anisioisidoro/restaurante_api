@@ -19,6 +19,6 @@ exports.CreateReserve = async(data) =>{
 }
 
 exports.getByUser = async(data) =>{
-    var response = await ReserveModel.find({usuario: data})
+    var response = await ReserveModel.find({usuario: data}).populate('restaurante')
     return response;
 }
