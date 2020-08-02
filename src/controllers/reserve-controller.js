@@ -30,7 +30,8 @@ exports.CreateReserve = async(req, res, next)=>{
 
 exports.getByUser = async(req, res, next)=>{
     try {
-        var response = await ReserveReposiotory.getByUser(req.params.usuario)
+        var token = await  TokenDecode.decodeToeknData(req)
+        var response = await ReserveReposiotory.getByUser(token.id)
         res.status(200).send(ResponseModel.responseModel({
             exito: true,
             mensagem: "Reserva listada com sucesso",
