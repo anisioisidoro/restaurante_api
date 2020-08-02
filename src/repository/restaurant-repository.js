@@ -14,3 +14,8 @@ exports.getByMunicipio = async(data) =>{
     var response = await RestaurantModel.find({municipio: data})
     return response;
 }
+
+exports.getAll = async(data) =>{
+    var response = await RestaurantModel.find({})
+    return response;
+}

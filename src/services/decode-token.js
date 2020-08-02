@@ -10,6 +10,6 @@ exports.decodeToeknData = async (req)=>{
 
       //Decodificar Token
     const data =  dec.decodeToken(token)
-     
+    
     return data;
 }

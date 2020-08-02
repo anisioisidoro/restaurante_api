@@ -1,6 +1,6 @@
 const ReserveReposiotory = require('../repository/reserve-repository')
 const ResponseModel = require('../models/response-model')
-const TokenService = require('../services/token-service')
+const TokenDecode = require('../services/decode-token')
 
 exports.CreateReserve = async(req, res, next)=>{
   try {
@@ -31,6 +31,7 @@ exports.CreateReserve = async(req, res, next)=>{
 exports.getByUser = async(req, res, next)=>{
     try {
         var token = await  TokenDecode.decodeToeknData(req)
+        
         var response = await ReserveReposiotory.getByUser(token.id)
         res.status(200).send(ResponseModel.responseModel({
             exito: true,

@@ -38,3 +38,22 @@ exports.CreateRestaurant = async(req, res, next)=>{
     }
   
   }
+
+  exports.getAll = async(req, res, next)=>{
+    try {
+      var response = await RestaurantRepository.getAll()
+  
+      res.status(201).send(ResponseModel.responseModel({
+          exito: true,
+          mensagem: "Restaurante listado com sucesso",
+          objecto: response
+      }))
+    } catch (error) {
+      res.status(400).send(ResponseModel.responseModel({
+          exito: true,
+          mensagem: "Erro na listagem",
+          objecto: null
+      }))
+    }
+  
+  }
